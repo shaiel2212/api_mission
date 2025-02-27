@@ -58,8 +58,8 @@ docker-compose up --build
 - **Response:**
 ```json
 {
-  "country": "Morocco",
-  "isolationDegree": 3
+  "country": "Brazil",
+  "isolationDegree": 2
 }
 ```
 
