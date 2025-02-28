@@ -5,7 +5,7 @@ module.exports = (sequelize) => {
 
     Mission.init(
         {
-            id: { // שינוי שם ל"id" כפי שדורש המבחן
+            id: {
                 type: DataTypes.INTEGER,
                 autoIncrement: true,
                 primaryKey: true,
@@ -24,7 +24,7 @@ module.exports = (sequelize) => {
             },
             latitude: {
                 type: DataTypes.DECIMAL(9, 6),
-                allowNull: true, // עדכון ל-TRUE כי לא כל הכתובות כוללות קואורדינטות מידית
+                allowNull: true, 
             },
             longitude: {
                 type: DataTypes.DECIMAL(9, 6),

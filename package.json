@@ -5,9 +5,7 @@
   "main": "src/app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js",
-    "test": "jest --coverage",
-    "test:watch": "jest --watch"
+    "dev": "nodemon app.js"
   },
   "keywords": [],
   "author": "",

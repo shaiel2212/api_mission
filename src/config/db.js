@@ -15,11 +15,10 @@ const Mission = require("../models/mission")(sequelize);
 const connectDB = async () => {
     try {
         await sequelize.authenticate();
-        console.log("✅ Database connected successfully.");
-        await sequelize.sync(); // יצירת טבלאות אם הן לא קיימות
-        console.log("✅ Database synchronized.");
+        console.log("Database connected successfully.");
+        await sequelize.sync();
+        console.log(" Database synchronized.");
 
-        // הכנסת נתוני דמו אם אין נתונים
         const missionCount = await Mission.count();
         if (missionCount === 0) {
             await Mission.bulkCreate([
@@ -32,7 +31,7 @@ const connectDB = async () => {
             console.log("✅ Sample data inserted into the database.");
         }
     } catch (error) {
-        console.error("❌ Database connection failed:", error);
+        console.error(" Database connection failed:", error);
         process.exit(1);
     }
 };

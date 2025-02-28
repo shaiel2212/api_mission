@@ -15,6 +15,7 @@ async function getCoordinates(address) {
         }
         
         const { lat, lng } = results[0].geometry.location;
+
         return { latitude: lat, longitude: lng };
     } catch (error) {
         console.error('Error fetching coordinates:', error.message);

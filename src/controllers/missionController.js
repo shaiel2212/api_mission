@@ -3,9 +3,7 @@ const { getCoordinates } = require('../services/googleMapsService');
 const { findMostIsolatedCountry } = require('../services/missionService');
 const { findClosestMission } = require('../services/distanceService');
 
-/**
- * הוספת משימה חדשה
- */
+
 const addMission = async (req, res) => {
     try {
         const { agent, country, address, date } = req.body;
@@ -32,9 +30,7 @@ const addMission = async (req, res) => {
     }
 };
 
-/**
- * מציאת המדינה עם הכי הרבה סוכנים בודדים
- */
+
 const getMostIsolatedCountry = async (req, res) => {
     try {
         const result = await findMostIsolatedCountry();
@@ -45,9 +41,7 @@ const getMostIsolatedCountry = async (req, res) => {
     }
 };
 
-/**
- * מציאת המשימה הקרובה ביותר לכתובת נתונה
- */
+
 const findClosestMissionController = async (req, res) => {
     try {
         const { targetLocation } = req.body;

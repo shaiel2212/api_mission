@@ -14,7 +14,7 @@ app.use(cors());
 
 app.use("/api", missionRoutes);
 
-// התחברות למסד הנתונים
+
 connectDB().then(() => {
     app.listen(PORT, () => {
         console.log(`✅ Server is running on port ${PORT}`);

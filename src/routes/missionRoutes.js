@@ -6,4 +6,5 @@ router.post("/mission", addMission);
 router.get("/countries-by-isolation", getMostIsolatedCountry);
 router.post("/find-closest", findClosestMission);
 
+
 module.exports = router;
