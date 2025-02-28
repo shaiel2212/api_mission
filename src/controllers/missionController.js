@@ -1,4 +1,4 @@
-const { Mission } = require('../models');
+const { Mission } = require('../config/db');
 const { getCoordinates } = require('../services/googleMapsService');
 const { findMostIsolatedCountry } = require('../services/missionService');
 const { findClosestMission } = require('../services/distanceService');

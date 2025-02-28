@@ -1,5 +1,4 @@
 const { Sequelize } = require("sequelize");
-const { Mission } = require("../models");
 
 const sequelize = new Sequelize(
     process.env.DB_NAME,
@@ -11,6 +10,7 @@ const sequelize = new Sequelize(
         logging: false,
     }
 );
+const Mission = require("../models/mission")(sequelize);
 
 const connectDB = async () => {
     try {
@@ -37,5 +37,5 @@ const connectDB = async () => {
     }
 };
 
-module.exports = { sequelize, connectDB };
+module.exports = { sequelize, connectDB,Mission };
 

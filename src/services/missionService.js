@@ -1,4 +1,4 @@
-const { Mission } = require('../models');
+const { Mission } = require('../config/db');
 
 async function findMostIsolatedCountry() {
     const missions = await Mission.findAll();
