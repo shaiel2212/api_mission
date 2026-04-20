@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>אודות - ארטל בניה ופיתוח</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#D4AF37',
+                        black: '#000000',
+                        white: '#FFFFFF',
+                        darkGray: '#1A1A1A'
+                    },
+                    fontFamily: {
+                        sans: ['Heebo', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'], // Added for Elicyon aesthetic
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1.5s ease-out forwards',
+                        'line-expand': 'lineExpand 1.5s ease-out forwards',
+                        'fade-out': 'fadeOut 0.5s ease-in forwards',
+                        'slide-up': 'slideUp 1s ease-out forwards'
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        lineExpand: {
+                            '0%': { width: '0', opacity: '0' },
+                            '50%': { opacity: '1' },
+                            '100%': { width: '100px', opacity: '1' },
+                        },
+                        fadeOut: {
+                            '0%': { opacity: '1', visibility: 'visible' },
+                            '100%': { opacity: '0', visibility: 'hidden' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        body { font-family: 'Heebo', sans-serif; background-color: #000000; color: #FFFFFF; margin: 0; padding: 0; overflow-x: hidden; }
+        ::-webkit-scrollbar { display: none; }
+        .glass-panel { background: rgba(26, 26, 26, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .elicyon-heading { font-family: 'Playfair Display', serif; }
+    </style>
+</head>
+<body class="m-0 p-0 antialiased selection:bg-gold selection:text-black">
+
+    <!-- Main Content Wrapper -->
+    <div id="main-content" class="min-h-screen flex flex-col">
+        
+        <!-- Navigation (Verbatim from prior HTML, updated active state) -->
+        <nav class="fixed top-0 w-full z-40 glass-panel transition-all duration-300 border-b border-white/10" id="navbar">
+            <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+                <a href="#" class="text-2xl font-bold text-white tracking-wider flex items-center gap-2">
+                    <i class="fa-solid fa-building text-gold"></i>
+                    ארטל<span class="text-gold">.</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8 space-x-reverse">
+                    <a href="#" class="text-sm font-medium text-gray-300 hover:text-gold transition-colors">דף הבית</a>
+                    <a href="#about" class="text-sm font-medium text-gold transition-colors border-b-2 border-gold pb-1">אודות</a>
+                    <a href="#projects" class="text-sm font-medium text-gray-300 hover:text-gold transition-colors">פרויקטים</a>
+                    <a href="#clients" class="text-sm font-medium text-gray-300 hover:text-gold transition-colors">לקוחות</a>
+                    <a href="#testimonials" class="text-sm font-medium text-gray-300 hover:text-gold transition-colors">המלצות</a>
+                    <a href="#contact" class="px-6 py-2.5 bg-gold text-black text-sm font-bold rounded hover:bg-white transition-colors flex items-center gap-2">
+                        צור קשר
+                        <i class="fa-solid fa-arrow-left text-xs"></i>
+                    </a>
+                </div>
+                <button class="md:hidden text-white focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- About Hero & Story (Split Screen) -->
+        <section id="about-story" class="pt-32 pb-24 lg:pt-48 lg:pb-32 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <!-- Typography Side -->
+                    <div class="relative pl-0 lg:pl-12">
+                        <div class="absolute right-0 top-0 bottom-0 w-[1px] bg-gold/30 hidden lg:block"></div>
+                        <div class="flex items-center gap-4 mb-8">
+                            <div class="h-[1px] w-12 bg-gold"></div>
+                            <span class="text-gold text-sm font-medium tracking-widest uppercase font-serif italic">Our Story</span>
+                        </div>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-light text-white mb-8 leading-tight elicyon-heading">
+                            20+ שנות מצוינות <br>
+                            <span class="text-gold italic">בבניית יוקרה</span>
+                        </h1>
+                        <div class="space-y-6 text-gray-400 text-lg font-light leading-relaxed">
+                            <p>
+                                מאז הקמתנו, ארטל בניה ופיתוח הציבה סטנדרט חדש בעולם בניית היוקרה בישראל. אנו מתמחים בהפיכת חזונות אדריכליים מורכבים למציאות עוצרת נשימה, תוך הקפדה חסרת פשרות על איכות החומרים, רמת הגימור ועמידה בלוחות זמנים.
+                            </p>
+                            <p>
+                                הניסיון העשיר שלנו מאפשר לנו לנווט בהצלחה פרויקטים מאתגרים, החל מווילות פאר ועד למשרדי הייטק יוקרתיים, תוך הענקת שקט נפשי מלא ללקוחותינו לאורך כל התהליך.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Image Side -->
+                    <div class="relative h-[500px] lg:h-[700px] w-full group">
+                        <div class="absolute inset-0 bg-gold/10 transform translate-x-4 translate-y-4 transition-transform group-hover:translate-x-6 group-hover:translate-y-6"></div>
+                        <img class="w-full h-full object-cover relative z-10 filter grayscale hover:grayscale-0 transition-all duration-700" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/3692900c28-26237b395e86c69724dd.png" alt="Luxury modern architecture interior, high-end construction, elegant finishes, minimalist design, dramatic lighting, gold accents" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Values & Process -->
+        <section id="values-process" class="py-24 bg-darkGray border-y border-white/5 relative">
+            <div class="max-w-7xl mx-auto px-6">
+                <!-- Values -->
+                <div class="text-center mb-20">
+                    <h2 class="text-3xl md:text-4xl font-light text-white mb-4 elicyon-heading">ערכי הליבה שלנו</h2>
+                    <div class="h-[1px] w-24 bg-gold mx-auto"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-32">
+                    <div class="text-center group">
+                        <div class="w-20 h-20 mx-auto border border-gold/30 rounded-full flex items-center justify-center mb-6 group-hover:border-gold transition-colors">
+                            <i class="fa-solid fa-gem text-2xl text-gold"></i>
+                        </div>
+                        <h3 class="text-xl font-medium text-white mb-3">איכות חסרת פשרות</h3>
+                        <p class="text-gray-400 font-light">שימוש בחומרים האיכותיים ביותר ורמת גימור קפדנית בכל פרט.</p>
+                    </div>
+                    <div class="text-center group">
+                        <div class="w-20 h-20 mx-auto border border-gold/30 rounded-full flex items-center justify-center mb-6 group-hover:border-gold transition-colors">
+                            <i class="fa-solid fa-eye text-2xl text-gold"></i>
+                        </div>
+                        <h3 class="text-xl font-medium text-white mb-3">שקיפות מלאה</h3>
+                        <p class="text-gray-400 font-light">תקשורת פתוחה ועדכונים שוטפים לאורך כל שלבי הפרויקט.</p>
+                    </div>
+                    <div class="text-center group">
+                        <div class="w-20 h-20 mx-auto border border-gold/30 rounded-full flex items-center justify-center mb-6 group-hover:border-gold transition-colors">
+                            <i class="fa-solid fa-clock text-2xl text-gold"></i>
+                        </div>
+                        <h3 class="text-xl font-medium text-white mb-3">עמידה בזמנים</h3>
+                        <p class="text-gray-400 font-light">ניהול קפדני של לוחות הזמנים ומסירה בזמן שנקבע.</p>
+                    </div>
+                </div>
+
+                <!-- Process -->
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-light text-white mb-4 elicyon-heading">תהליך העבודה</h2>
+                    <div class="h-[1px] w-24 bg-gold mx-auto"></div>
+                </div>
+
+                <div class="relative max-w-5xl mx-auto">
+                    <!-- Connecting Line -->
+                    <div class="hidden md:block absolute top-1/2 left-0 right-0 h-[1px] bg-gold/20 -translate-y-1/2 z-0"></div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+                        <!-- Step 1 -->
+                        <div class="bg-black border border-white/10 p-8 text-center hover:border-gold/50 transition-colors relative group">
+                            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-black px-2 text-gold font-serif italic">01</div>
+                            <i class="fa-solid fa-comments text-3xl text-gray-500 group-hover:text-gold transition-colors mb-4"></i>
+                            <h4 class="text-lg font-medium text-white mb-2">פגישת ייעוץ</h4>
+                            <p class="text-sm text-gray-400">הבנת הצרכים, החזון ומסגרת התקציב.</p>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="bg-black border border-white/10 p-8 text-center hover:border-gold/50 transition-colors relative group">
+                            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-black px-2 text-gold font-serif italic">02</div>
+                            <i class="fa-solid fa-pen-ruler text-3xl text-gray-500 group-hover:text-gold transition-colors mb-4"></i>
+                            <h4 class="text-lg font-medium text-white mb-2">תכנון מוקפד</h4>
+                            <p class="text-sm text-gray-400">הכנת תוכניות מפורטות ובחירת חומרים.</p>
+                        </div>
+                        <!-- Step 3 -->
+                        <div class="bg-black border border-white/10 p-8 text-center hover:border-gold/50 transition-colors relative group">
+                            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-black px-2 text-gold font-serif italic">03</div>
+                            <i class="fa-solid fa-helmet-safety text-3xl text-gray-500 group-hover:text-gold transition-colors mb-4"></i>
+                            <h4 class="text-lg font-medium text-white mb-2">ביצוע ופיקוח</h4>
+                            <p class="text-sm text-gray-400">ניהול עבודה בשטח עם בקרת איכות מחמירה.</p>
+                        </div>
+                        <!-- Step 4 -->
+                        <div class="bg-black border border-white/10 p-8 text-center hover:border-gold/50 transition-colors relative group">
+                            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-black px-2 text-gold font-serif italic">04</div>
+                            <i class="fa-solid fa-key text-3xl text-gray-500 group-hover:text-gold transition-colors mb-4"></i>
+                            <h4 class="text-lg font-medium text-white mb-2">מסירת מפתח</h4>
+                            <p class="text-sm text-gray-400">בדיקה סופית ומסירת הפרויקט לשביעות רצון מלאה.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team & Certifications -->
+        <section id="team-certs" class="py-24 bg-black relative">
+            <div class="max-w-7xl mx-auto px-6">
+                
+                <!-- Certifications -->
+                <div class="mb-24">
+                    <div class="flex items-center gap-4 mb-10">
+                        <span class="text-gold text-sm font-medium tracking-widest uppercase font-serif italic">Trust & Reliability</span>
+                        <div class="h-[1px] flex-grow bg-white/10"></div>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-60">
+                        <div class="flex flex-col items-center justify-center text-center p-6 border border-white/5 hover:border-gold/30 hover:opacity-100 transition-all">
+                            <i class="fa-solid fa-file-contract text-3xl mb-3 text-white"></i>
+                            <span class="text-sm text-gray-400">קבלן רשום</span>
+                        </div>
+                        <div class="flex flex-col items-center justify-center text-center p-6 border border-white/5 hover:border-gold/30 hover:opacity-100 transition-all">
+                            <i class="fa-solid fa-shield-halved text-3xl mb-3 text-white"></i>
+                            <span class="text-sm text-gray-400">ביטוח עבודות קבלניות</span>
+                        </div>
+                        <div class="flex flex-col items-center justify-center text-center p-6 border border-white/5 hover:border-gold/30 hover:opacity-100 transition-all">
+                            <i class="fa-solid fa-award text-3xl mb-3 text-white"></i>
+                            <span class="text-sm text-gray-400">תו תקן איכות ISO</span>
+                        </div>
+                        <div class="flex flex-col items-center justify-center text-center p-6 border border-white/5 hover:border-gold/30 hover:opacity-100 transition-all">
+                            <i class="fa-solid fa-hard-hat text-3xl mb-3 text-white"></i>
+                            <span class="text-sm text-gray-400">ממונה בטיחות מוסמך</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team -->
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-light text-white mb-4 elicyon-heading">הצוות המוביל</h2>
+                    <div class="h-[1px] w-24 bg-gold mx-auto"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Team Member 1 -->
+                    <div class="group relative overflow-hidden bg-darkGray border border-transparent hover:border-gold/30 transition-all">
+                        <div class="h-80 w-full overflow-hidden">
+                            <img class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/3aae15d87b-725cfad18eee76f78e20.png" alt="Professional portrait of a male construction manager, elegant dark background, sophisticated lighting" />
+                        </div>
+                        <div class="p-6 text-center border-t border-white/5">
+                            <h3 class="text-xl font-medium text-white mb-1">אבי כהן</h3>
+                            <p class="text-gold text-sm font-serif italic mb-3">מנכ"ל ומייסד</p>
+                            <p class="text-gray-400 text-sm font-light">קבלן רשום בעל 25 שנות ניסיון בניהול פרויקטי יוקרה מורכבים.</p>
+                        </div>
+                    </div>
+                    <!-- Team Member 2 -->
+                    <div class="group relative overflow-hidden bg-darkGray border border-transparent hover:border-gold/30 transition-all">
+                        <div class="h-80 w-full overflow-hidden">
+                            <img class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/3fc05a202c-b0380e0692eb8f74f2f5.png" alt="Professional portrait of a female architect, elegant dark background, sophisticated lighting" />
+                        </div>
+                        <div class="p-6 text-center border-t border-white/5">
+                            <h3 class="text-xl font-medium text-white mb-1">מיכל לוי</h3>
+                            <p class="text-gold text-sm font-serif italic mb-3">אדריכלית ראשית</p>
+                            <p class="text-gray-400 text-sm font-light">מובילה את מחלקת התכנון והעיצוב, מתמחה בחללי פרימיום.</p>
+                        </div>
+                    </div>
+                    <!-- Team Member 3 -->
+                    <div class="group relative overflow-hidden bg-darkGray border border-transparent hover:border-gold/30 transition-all">
+                        <div class="h-80 w-full overflow-hidden">
+                            <img class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/3aae15d87b-7c93d8068dac7899b18a.png" alt="Professional portrait of a male site manager, elegant dark background, sophisticated lighting" />
+                        </div>
+                        <div class="p-6 text-center border-t border-white/5">
+                            <h3 class="text-xl font-medium text-white mb-1">דוד ששון</h3>
+                            <p class="text-gold text-sm font-serif italic mb-3">מנהל עבודה ראשי</p>
+                            <p class="text-gray-400 text-sm font-light">אחראי על ביצוע בשטח, פיקוח על איכות ועמידה בלוחות זמנים.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer (Verbatim from prior HTML) -->
+        <footer id="footer" class="bg-darkGray border-t border-white/10 relative overflow-hidden mt-auto">
+            <div class="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gold to-transparent opacity-50"></div>
+            
+            <div class="max-w-7xl mx-auto px-6 py-24">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    
+                    <!-- Contact Info -->
+                    <div>
+                        <div class="flex items-center gap-4 mb-4">
+                            <span class="text-gold text-sm font-medium tracking-widest uppercase font-serif italic">Get in touch</span>
+                            <div class="h-[1px] w-12 bg-gold"></div>
+                        </div>
+                        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">בואו נדבר על <span class="text-gold">הפרויקט הבא</span> שלכם</h2>
+                        <p class="text-gray-400 text-lg mb-10 leading-relaxed">
+                            השאירו פרטים ונחזור אליכם בהקדם לשיחת ייעוץ ראשונית ללא התחייבות.
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-6 mb-12">
+                            <a href="#" class="flex-1 flex items-center justify-center gap-3 px-6 py-4 bg-[#25D366]/10 border border-[#25D366]/30 text-[#25D366] rounded hover:bg-[#25D366] hover:text-black transition-all font-medium">
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                                שלחו הודעת וואטסאפ
+                            </a>
+                            <a href="tel:0501234567" class="flex-1 flex items-center justify-center gap-3 px-6 py-4 bg-gold/10 border border-gold/30 text-gold rounded hover:bg-gold hover:text-black transition-all font-medium">
+                                <i class="fa-solid fa-phone text-xl"></i>
+                                חייגו עכשיו
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Lead Form -->
+                    <div class="bg-black p-8 md:p-10 rounded-none border border-white/10 relative">
+                        <div class="absolute top-0 right-0 w-full h-1 bg-gold"></div>
+                        <h3 class="text-2xl font-bold text-white mb-8">השאירו פרטים</h3>
+                        
+                        <form class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <input type="text" class="w-full bg-darkGray border-b border-white/20 px-4 py-3 text-white focus:outline-none focus:border-gold transition-colors placeholder-gray-500" placeholder="שם מלא *">
+                                </div>
+                                <div>
+                                    <input type="tel" class="w-full bg-darkGray border-b border-white/20 px-4 py-3 text-white focus:outline-none focus:border-gold transition-colors placeholder-gray-500" placeholder="טלפון *">
+                                </div>
+                            </div>
+                            <div>
+                                <select class="w-full bg-darkGray border-b border-white/20 px-4 py-3 text-white focus:outline-none focus:border-gold transition-colors appearance-none text-gray-500">
+                                    <option value="" disabled selected>סוג פרויקט מבוקש</option>
+                                    <option value="private">בנייה פרטית</option>
+                                    <option value="office">משרדים וחללי עבודה</option>
+                                    <option value="renovation">שיפוץ יוקרה</option>
+                                </select>
+                            </div>
+                            <button type="button" class="w-full py-4 bg-gold text-black font-bold rounded-none hover:bg-white transition-colors mt-4 flex items-center justify-center gap-2">
+                                שלח פנייה
+                                <i class="fa-solid fa-arrow-left"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+                
+                <!-- Copyright -->
+                <div class="mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <div class="text-gray-500 text-sm">
+                        &copy; 2024 ארטל בניה ופיתוח. כל הזכויות שמורות.
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-gray-400 hover:text-gold transition-colors text-xl"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-gold transition-colors text-xl"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-gold transition-colors text-xl"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Mobile Sticky CTA -->
+        <div class="md:hidden fixed bottom-0 left-0 w-full z-50 glass-panel border-t border-white/10 p-4">
+            <a href="#contact" class="w-full py-3.5 bg-gold text-black font-bold rounded flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(212,175,55,0.3)]">
+                קבעו שיחת ייעוץ
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+        </div>
+
+    </div>
+
+    <script>
+        // Navbar scroll effect
+        document.addEventListener('DOMContentLoaded', () => {
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('bg-black/95', 'backdrop-blur-md');
+                    navbar.classList.remove('glass-panel');
+                } else {
+                    navbar.classList.remove('bg-black/95', 'backdrop-blur-md');
+                    navbar.classList.add('glass-panel');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

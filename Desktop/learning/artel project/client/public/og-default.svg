@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="ogTitle">
+  <title id="ogTitle">ашим брйд ефйъез</title>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a"/>
+      <stop offset="100%" style="stop-color:#1a1a1a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <text x="600" y="300" text-anchor="middle" fill="#d4af37" font-family="system-ui, sans-serif" font-size="56" font-weight="700">ашим брйд ефйъез</text>
+  <text x="600" y="380" text-anchor="middle" fill="#a3a3a3" font-family="system-ui, sans-serif" font-size="28">рйдем ебйцет фшейчий брййд ещйфех</text>
+</svg>

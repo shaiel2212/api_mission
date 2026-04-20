@@ -1,0 +1,24 @@
+בדיקות ידניות אחרי Deploy (פרודקשן / staging)
+========================================
+
+1) PageSpeed Insights — https://pagespeed.web.dev/
+   - הזינו את URL האתר; הריצו מובייל ודסקטופ; שמרו צילום מסך או PDF לתיעוד.
+
+2) Google Search Console
+   - הוסיפו נכס (דומיין או קידומת URL)
+   - אימות בעלות
+   - Sitemaps → הוסיפו: https://<הדומיין>/sitemap.xml
+   - Coverage / Page indexing — בדקו שגיאות סריקה
+
+3) Rich Results Test (אופציונלי)
+   - https://search.google.com/test/rich-results
+   - URL של דף הבית — וידוא JSON-LD ללא שגיאות חמורות
+
+4) קנוניקל וכפילות
+   - פתחו 2–3 דפים ציבוריים; וידאו שאין כפילות www/non-www (תלוי הפניות בשרת)
+
+5) כותרות Cache (CDN)
+   - בדקו ב-DevTools → Network → קובץ JS מ-/assets/ — Cache-Control כולל max-age ארוך או immutable (לפי ספק)
+
+6) Bing Webmaster (אופציונלי)
+   - הוספת האתר והגשת sitemap

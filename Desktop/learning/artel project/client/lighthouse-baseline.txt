@@ -1,0 +1,21 @@
+בדיקות QA — סיכום פקודות
+========================
+
+סט מלא (מומלץ ל-CI / לפני merge):
+  npm run qa
+  (מריץ: build → qa:static → playwright test → qa:lighthouse)
+
+נפרד:
+  npm run build && npm run qa:static     — אימות קבצי dist (robots, sitemap, chunks)
+  npm run qa:e2e                         — Playwright (שרת preview על פורט 4173 אוטומטית)
+  npm run qa:lighthouse                  — Lighthouse HTML ב-dist/lighthouse-report.html (פורט 4173)
+
+ידני (פורט 5173):
+  npm run preview
+  npm run lh
+  הדוח נשמר ב-dist/lighthouse-report.html
+
+בדיקות אחרי deploy (ידני): ראו qa/POST_DEPLOY_CHECKLIST.txt
+
+יעדים: ציוני Lighthouse גבוהים ב-Performance / Accessibility / SEO ב-Lab;
+       לאחר עליה — PSI ו-Search Console (sitemap, Field CWV).

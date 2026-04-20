@@ -1,0 +1,39 @@
+{
+  "name": "artel-client",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "prebuild": "node scripts/generate-seo-files.mjs",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "preview:qa": "vite preview --host 127.0.0.1 --port 4173 --strictPort",
+    "lh": "node node_modules/lighthouse/cli/index.js http://127.0.0.1:5173/ --only-categories=performance,accessibility,seo --output=html --output-path=dist/lighthouse-report.html --chrome-flags=\"--headless --no-sandbox\"",
+    "qa:static": "node scripts/qa-static-check.mjs",
+    "qa:e2e": "playwright test",
+    "qa:lighthouse": "start-server-and-test \"vite preview --host 127.0.0.1 --port 4173 --strictPort\" http://127.0.0.1:4173 \"node scripts/run-lighthouse.mjs\"",
+    "qa": "npm run build && npm run qa:static && playwright test && npm run qa:lighthouse"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-helmet-async": "^3.0.0",
+    "react-icons": "^5.6.0",
+    "react-router-dom": "^6.28.0",
+    "recharts": "^3.8.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "autoprefixer": "^10.4.20",
+    "lighthouse": "^12.8.2",
+    "postcss": "^8.4.47",
+    "start-server-and-test": "^2.1.5",
+    "tailwindcss": "^3.4.14",
+    "typescript": "~5.6.3",
+    "vite": "^5.4.11"
+  }
+}

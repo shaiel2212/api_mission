@@ -1,0 +1,245 @@
+{
+  "info": {
+    "name": "Artel API - Leads Platform",
+    "_postman_id": "8d9b6ca3-84e7-4528-b8a8-c87a7f7ea1b5",
+    "description": "Collection for validating public lead ingestion and internal admin lifecycle APIs.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/health",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "health"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Public - Create Lead",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Test Lead\",\n  \"phone\": \"050-123-4567\",\n  \"message\": \"Interested in a renovation project.\",\n  \"source\": \"website\",\n  \"attribution\": {\n    \"utmSource\": \"google\",\n    \"utmMedium\": \"cpc\",\n    \"utmCampaign\": \"artel_spring\",\n    \"utmTerm\": \"luxury renovation\",\n    \"utmContent\": \"hero_cta\",\n    \"referrer\": \"https://google.com\",\n    \"landingPath\": \"/contact?utm_source=google\",\n    \"firstTouchAt\": \"2026-04-17T10:00:00.000Z\"\n  },\n  \"consent\": {\n    \"marketing\": true,\n    \"timestamp\": \"2026-04-17T10:00:05.000Z\",\n    \"source\": \"contact_form\"\n  }\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/leads",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "leads"
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status is success', function () {",
+              "  pm.response.to.have.status(200);",
+              "  const json = pm.response.json();",
+              "  pm.expect(json.status).to.eql('success');",
+              "  pm.expect(json.leadId).to.be.a('number');",
+              "  if (json.leadId) {",
+              "    pm.collectionVariables.set('leadId', String(json.leadId));",
+              "  }",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Public - Duplicate Lead (expect 429)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Duplicate Check\",\n  \"phone\": \"0501234567\",\n  \"message\": \"Should fail if sent right after previous request\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/leads",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "leads"
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Duplicate blocked', function () {",
+              "  pm.response.to.have.status(429);",
+              "  const json = pm.response.json();",
+              "  pm.expect(json.status).to.eql('error');",
+              "  pm.expect(json.code).to.eql('LEAD_003');",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Admin - List Leads",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-admin-api-key",
+            "value": "{{adminApiKey}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/admin/leads?limit=20",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "admin",
+            "leads"
+          ],
+          "query": [
+            {
+              "key": "limit",
+              "value": "20"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Admin - Update Lead Status/Assignment",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-admin-api-key",
+            "value": "{{adminApiKey}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"contacted\",\n  \"priority\": \"high\",\n  \"assignedTo\": 1,\n  \"nextFollowUpAt\": \"2026-04-18T09:00:00.000Z\",\n  \"note\": \"Called customer and scheduled follow-up.\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/admin/leads/{{leadId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "admin",
+            "leads",
+            "{{leadId}}"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Admin - Lead Events",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-admin-api-key",
+            "value": "{{adminApiKey}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/admin/leads/{{leadId}}/events?limit=50",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "admin",
+            "leads",
+            "{{leadId}}",
+            "events"
+          ],
+          "query": [
+            {
+              "key": "limit",
+              "value": "50"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Admin - Metrics Overview",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-admin-api-key",
+            "value": "{{adminApiKey}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/admin/leads/metrics/overview",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "admin",
+            "leads",
+            "metrics",
+            "overview"
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3001"
+    },
+    {
+      "key": "adminApiKey",
+      "value": "change-me"
+    },
+    {
+      "key": "leadId",
+      "value": "1"
+    }
+  ]
+}

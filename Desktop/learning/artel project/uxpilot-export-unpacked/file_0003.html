@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#D4AF37',
+                        black: '#000000',
+                        white: '#FFFFFF',
+                        darkGray: '#1A1A1A'
+                    },
+                    fontFamily: {
+                        sans: ['Heebo', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1.5s ease-out forwards',
+                        'line-expand': 'lineExpand 1.5s ease-out forwards',
+                        'fade-out': 'fadeOut 0.5s ease-in forwards',
+                        'slide-up': 'slideUp 1s ease-out forwards'
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        lineExpand: {
+                            '0%': { width: '0', opacity: '0' },
+                            '50%': { opacity: '1' },
+                            '100%': { width: '100px', opacity: '1' },
+                        },
+                        fadeOut: {
+                            '0%': { opacity: '1', visibility: 'visible' },
+                            '100%': { opacity: '0', visibility: 'hidden' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        body { font-family: 'Heebo', sans-serif; background-color: #000000; color: #FFFFFF; margin: 0; padding: 0; overflow-x: hidden; }
+        ::-webkit-scrollbar { display: none; }
+        .glass-panel { background: rgba(26, 26, 26, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+    </style>
+</head>
+<body class="m-0 p-0 antialiased selection:bg-gold selection:text-black">
+
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black transition-opacity duration-500">
+        <div class="text-center opacity-0 animate-fade-in flex flex-col items-center">
+            <h1 class="text-4xl md:text-6xl font-bold tracking-wider text-white mb-4">
+                ארטל <span class="text-gold font-light">בניה ופיתוח</span>
+            </h1>
+            <div class="h-[2px] bg-gold mx-auto animate-line-expand"></div>
+            <p class="mt-6 text-sm md:text-base text-gray-400 tracking-widest uppercase">ניהול וביצוע פרויקטי יוקרה</p>
+        </div>
+    </div>
+
+    <!-- Main Content Wrapper (Hidden initially) -->
+    <div id="main-content" class="min-h-screen opacity-0 hidden flex-col">
+        
+        <!-- Navigation -->
+        <nav class="fixed top-0 w-full z-40 glass-panel transition-all duration-300" id="navbar">
+            <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+                <a href="#" class="text-2xl font-bold text-white tracking-wider">
+                    ארטל<span class="text-gold">.</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8 space-x-reverse">
+                    <a href="#services" class="text-sm font-medium text-gray-300 hover:text-gold transition-colors">שירותים</a>
+                    <a href="#about" class="text-sm font-medium text-gray-300 hover:text-gold transition-colors">אודות</a>
+                    <a href="#projects" class="text-sm font-medium text-gray-300 hover:text-gold transition-colors">פרויקטים</a>
+                    <a href="#contact" class="px-6 py-2.5 bg-gold text-black text-sm font-bold rounded hover:bg-white transition-colors">צור קשר</a>
+                </div>
+                <button class="md:hidden text-white focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <div style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2075&q=80')" class="w-full h-full bg-cover bg-center opacity-40"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
+            </div>
+            
+            <div class="relative z-10 text-center px-6 max-w-4xl mx-auto mt-20">
+                <span class="inline-block py-1 px-3 rounded-full border border-gold/30 text-gold text-xs font-semibold tracking-widest mb-6 uppercase bg-black/50 backdrop-blur-sm">
+                    מעל 20 שנות מצוינות
+                </span>
+                <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight mb-6 animate-slide-up" style="animation-delay: 0.2s;">
+                    בונים את המחר,<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold to-yellow-200">בסטנדרט של היום.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto animate-slide-up leading-relaxed" style="animation-delay: 0.4s;">
+                    התמחות בשיפוצי יוקרה, חללי עבודה מתקדמים ובנייה פרטית ללא פשרות. מלווים אותך משלב החזון ועד למפתח.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up" style="animation-delay: 0.6s;">
+                    <button class="w-full sm:w-auto px-8 py-4 bg-gold text-black font-bold rounded hover:bg-white transition-all transform hover:-translate-y-1 shadow-[0_0_20px_rgba(212,175,55,0.3)]">
+                        התחל פרויקט
+                    </button>
+                    <button class="w-full sm:w-auto px-8 py-4 bg-transparent border border-white/20 text-white font-medium rounded hover:bg-white/5 transition-all flex items-center justify-center gap-3">
+                        <i class="fa-solid fa-play text-xs text-gold"></i>
+                        צפה בתיק עבודות
+                    </button>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
+                <span class="text-xs text-gray-400 mb-2 tracking-widest">גלול מטה</span>
+                <i class="fa-solid fa-chevron-down text-gold"></i>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section id="stats" class="py-20 bg-darkGray border-y border-white/5 relative z-20">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center">
+                    <div class="p-6 rounded-2xl glass-panel hover:border-gold/30 transition-colors">
+                        <div class="text-4xl md:text-5xl font-bold text-gold mb-2">20+</div>
+                        <div class="text-sm text-gray-400 uppercase tracking-wider">שנות ניסיון</div>
+                    </div>
+                    <div class="p-6 rounded-2xl glass-panel hover:border-gold/30 transition-colors">
+                        <div class="text-4xl md:text-5xl font-bold text-white mb-2">150+</div>
+                        <div class="text-sm text-gray-400 uppercase tracking-wider">פרויקטים שהושלמו</div>
+                    </div>
+                    <div class="p-6 rounded-2xl glass-panel hover:border-gold/30 transition-colors">
+                        <div class="text-4xl md:text-5xl font-bold text-white mb-2">100%</div>
+                        <div class="text-sm text-gray-400 uppercase tracking-wider">שביעות רצון</div>
+                    </div>
+                    <div class="p-6 rounded-2xl glass-panel hover:border-gold/30 transition-colors">
+                        <div class="text-4xl md:text-5xl font-bold text-white mb-2">24/7</div>
+                        <div class="text-sm text-gray-400 uppercase tracking-wider">ליווי אישי</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-32 bg-black relative">
+            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+            
+            <div class="max-w-7xl mx-auto px-6 relative z-10">
+                <div class="text-center mb-20">
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">תחומי <span class="text-gold">התמחות</span></h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto text-lg">פתרונות בנייה מקיפים המותאמים לסטנדרטים הגבוהים ביותר</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Service 1 -->
+                    <div class="group relative rounded-2xl overflow-hidden glass-panel border border-white/5 hover:border-gold/50 transition-all duration-500">
+                        <div class="h-64 overflow-hidden">
+                            <div style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2053&q=80')" class="w-full h-full bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700"></div>
+                        </div>
+                        <div class="p-8 relative">
+                            <div class="w-12 h-12 bg-black border border-gold/30 rounded-full flex items-center justify-center absolute -top-6 right-8 text-gold text-xl shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+                                <i class="fa-solid fa-house-chimney"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-4 mt-2">בנייה פרטית ויוקרה</h3>
+                            <p class="text-gray-400 leading-relaxed mb-6">הקמת וילות ובתי יוקרה מאפס, תוך הקפדה על חומרי גלם משובחים ורמת גימור ללא פשרות.</p>
+                            <a href="#" class="inline-flex items-center text-gold font-medium hover:text-white transition-colors">
+                                קרא עוד <i class="fa-solid fa-arrow-left ml-2 text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="group relative rounded-2xl overflow-hidden glass-panel border border-white/5 hover:border-gold/50 transition-all duration-500 transform md:-translate-y-8">
+                        <div class="h-64 overflow-hidden">
+                            <div style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80')" class="w-full h-full bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700"></div>
+                        </div>
+                        <div class="p-8 relative">
+                            <div class="w-12 h-12 bg-black border border-gold/30 rounded-full flex items-center justify-center absolute -top-6 right-8 text-gold text-xl shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+                                <i class="fa-solid fa-building"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-4 mt-2">משרדים וחללי עבודה</h3>
+                            <p class="text-gray-400 leading-relaxed mb-6">עיצוב וביצוע של חללי עבודה מודרניים, משרדי הייטק ומתחמי מסחר המעודדים פרודוקטיביות.</p>
+                            <a href="#" class="inline-flex items-center text-gold font-medium hover:text-white transition-colors">
+                                קרא עוד <i class="fa-solid fa-arrow-left ml-2 text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="group relative rounded-2xl overflow-hidden glass-panel border border-white/5 hover:border-gold/50 transition-all duration-500">
+                        <div class="h-64 overflow-hidden">
+                            <div style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80')" class="w-full h-full bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700"></div>
+                        </div>
+                        <div class="p-8 relative">
+                            <div class="w-12 h-12 bg-black border border-gold/30 rounded-full flex items-center justify-center absolute -top-6 right-8 text-gold text-xl shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+                                <i class="fa-solid fa-hammer"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-4 mt-2">שיפוצי יוקרה מורכבים</h3>
+                            <p class="text-gray-400 leading-relaxed mb-6">חידוש ושדרוג מבנים קיימים ברמת פרימיום, טיפול בתשתיות והפיכת חלל ישן ליצירת מופת.</p>
+                            <a href="#" class="inline-flex items-center text-gold font-medium hover:text-white transition-colors">
+                                קרא עוד <i class="fa-solid fa-arrow-left ml-2 text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA / Lead Generation Footer -->
+        <footer id="contact" class="bg-darkGray border-t border-white/10 relative overflow-hidden">
+            <div class="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gold to-transparent opacity-50"></div>
+            
+            <div class="max-w-7xl mx-auto px-6 py-24">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    
+                    <!-- Contact Info -->
+                    <div>
+                        <h2 class="text-4xl font-bold text-white mb-6">מוכנים להתחיל <span class="text-gold">לבנות?</span></h2>
+                        <p class="text-gray-400 text-lg mb-10 leading-relaxed">
+                            השאירו פרטים ונחזור אליכם בהקדם לשיחת ייעוץ ראשונית ללא התחייבות. המומחים שלנו כאן כדי להפוך את החזון שלכם למציאות.
+                        </p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4 group cursor-pointer">
+                                <div class="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-black transition-all">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm text-gray-500">התקשרו אלינו</div>
+                                    <div class="text-white font-medium text-lg">050-123-4567</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 group cursor-pointer">
+                                <div class="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-black transition-all">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm text-gray-500">שלחו מייל</div>
+                                    <div class="text-white font-medium text-lg">office@artel-dev.co.il</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 group cursor-pointer">
+                                <div class="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-black transition-all">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm text-gray-500">משרד ראשי</div>
+                                    <div class="text-white font-medium text-lg">מגדלי ב.ס.ר, תל אביב</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lead Form -->
+                    <div class="glass-panel p-8 md:p-10 rounded-2xl border border-white/10 relative">
+                        <div class="absolute -top-4 -right-4 w-24 h-24 bg-gold/10 rounded-full blur-xl pointer-events-none"></div>
+                        <h3 class="text-2xl font-bold text-white mb-8">בקשת הצעת מחיר</h3>
+                        
+                        <form class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-400 mb-2">שם מלא</label>
+                                    <input type="text" class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold transition-colors" placeholder="ישראל ישראלי">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-400 mb-2">טלפון</label>
+                                    <input type="tel" class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold transition-colors" placeholder="05x-xxxxxxx">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-2">סוג פרויקט</label>
+                                <select class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold transition-colors appearance-none">
+                                    <option value="" disabled selected>בחר סוג פרויקט</option>
+                                    <option value="private">בנייה פרטית</option>
+                                    <option value="office">משרדים וחללי עבודה</option>
+                                    <option value="renovation">שיפוץ יוקרה</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-2">פרטים נוספים</label>
+                                <textarea rows="4" class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold transition-colors resize-none" placeholder="ספר לנו קצת על הפרויקט המתוכנן..."></textarea>
+                            </div>
+                            <button type="button" class="w-full py-4 bg-gold text-black font-bold rounded-lg hover:bg-white transition-colors shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+                                שלח פנייה
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+                
+                <!-- Copyright -->
+                <div class="mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <div class="text-gray-500 text-sm">
+                        &copy; 2024 ארטל בניה ופיתוח. כל הזכויות שמורות.
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-gold hover:bg-white/10 transition-colors">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-gold hover:bg-white/10 transition-colors">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-gold hover:bg-white/10 transition-colors">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        // Splash Screen Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const splashScreen = document.getElementById('splash-screen');
+            const mainContent = document.getElementById('main-content');
+
+            // Wait 2.5 seconds, then fade out splash and show main content
+            setTimeout(() => {
+                splashScreen.classList.remove('opacity-100');
+                splashScreen.classList.add('opacity-0');
+                
+                setTimeout(() => {
+                    splashScreen.style.display = 'none';
+                    mainContent.classList.remove('hidden');
+                    // Small delay to allow display:block to apply before fading in
+                    setTimeout(() => {
+                        mainContent.classList.add('opacity-100');
+                    }, 50);
+                }, 500); // Wait for fade out transition
+            }, 2500);
+
+            // Navbar scroll effect
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('bg-black/90', 'border-b', 'border-white/10');
+                    navbar.classList.remove('glass-panel');
+                } else {
+                    navbar.classList.remove('bg-black/90', 'border-b', 'border-white/10');
+                    navbar.classList.add('glass-panel');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
